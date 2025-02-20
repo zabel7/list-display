@@ -6,7 +6,7 @@ import App from './App.jsx';
 // and wrap it with the Routes and Route components
 // to enable routing in the application
 createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
+    <BrowserRouter basename="/">
         <App />
     </BrowserRouter>,
 );
