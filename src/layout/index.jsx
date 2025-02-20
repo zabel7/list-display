@@ -9,9 +9,9 @@ import Nav from 'layout/Nav';
 // layout of the application
 const Layout = () => {
     return (
-        <div className="w-screen h-screen bg-gray-50 overflow-auto">
+        <div className="w-screen flex h-screen bg-gray-50 overflow-auto">
             <Nav />
-            <main className="p-4 mt-[2rem]">
+            <main className="p-4 mt-[2rem] flex-1">
                 <Outlet />
             </main>
         </div>
