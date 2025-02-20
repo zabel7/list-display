@@ -9,12 +9,12 @@ const ProductCard = ({ product, view, onSelect }) => (
         onClick={onSelect}
         className={`${
             view === 'list' ? 'flex-row' : 'flex-col'
-        } relative cursor-pointer flex group shadow border border-gray-200 bg-white rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105`}
+        } relative cursor-pointer flex group shadow border-gray-200 bg-white rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105`}
     >
         <img
             className={`${
                 view === 'list' ? 'w-42 h-full' : 'w-full h-64'
-            } aspect-square p-4 border-gray-200 bg-white rounded-xl object-contain group-hover:opacity-75 blur-s`}
+            } aspect-square p-4 border-gray-200 rounded-xl object-contain group-hover:opacity-75 blur-s`}
             src={product.image}
             alt={product.title}
             onLoad={(e) => e.target.classList.remove('blur-sm')}
