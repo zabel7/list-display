@@ -1,0 +1,14 @@
+@import 'tailwindcss';
+@theme {
+    --font-cursive: 'Lucida Handwriting', cursive;
+    --font-sans: 'Open Sans', sans-serif;
+    --color-light: #f8f9fa;
+    --color-dark: #343a40;
+    --color-primary: #007bff;
+    --color-secondary: #6c757d;
+}
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
