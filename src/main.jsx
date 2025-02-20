@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter } from 'react-router';
 import App from './App.jsx';
 
 // Render the App component inside the BrowserRouter
@@ -7,8 +7,6 @@ import App from './App.jsx';
 // to enable routing in the application
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<App />} />
-        </Routes>
+        <App />
     </BrowserRouter>,
 );

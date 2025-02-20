@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 // assets
 import StarIcon from 'assets/star-icon.svg';
 
-const ProductCard = ({ product, view }) => (
+const ProductCard = ({ product, view, onSelect }) => (
     <div
         key={product.id}
+        onClick={onSelect}
         className={`${
             view === 'list' ? 'flex-row' : 'flex-col'
-        } relative flex group shadow border-b border-gray-200 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105`}
+        } relative cursor-pointer flex group shadow border-b border-gray-200 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105`}
     >
         <img
             className={`${
@@ -31,7 +32,7 @@ const ProductCard = ({ product, view }) => (
                     <img
                         src={StarIcon}
                         alt="star"
-                        className="w-3.3.5 h-4 inline-block"
+                        className="w-4 h-4 inline-block"
                     />
                     <p className="text-sm text-gray-500">
                         {product.rating.rate} ({product.rating.count})
@@ -60,6 +61,7 @@ ProductCard.propTypes = {
         }).isRequired,
     }).isRequired,
     view: PropTypes.oneOf(['grid', 'list']).isRequired,
+    onSelect: PropTypes.func.isRequired,
 };
 
 export default ProductCard;

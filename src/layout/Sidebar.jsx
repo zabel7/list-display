@@ -8,6 +8,8 @@ import { Loader } from 'UI/Loader';
 import useAxios from 'hooks/useAxios';
 // api
 import { getCategories } from 'api/products';
+// UI
+import { CloseButton } from 'UI/CloseButton';
 
 // Sidebar component
 // It renders the sidebar with the list of categories fetched from the API.
@@ -28,6 +30,10 @@ const Sidebar = ({ open, onClose }) => {
                     open ? 'left-2' : '-translate-x-full'
                 } w-72 p-4 transition-transform duration-300 bg-gray-50 shadow-md backdrop-blur border rounded-lg border-gray-200 fixed z-50 inset-y-2`}
             >
+                <div className="absolute top-2.5 right-2.5 -ml-8 flex pt-4 pr-2 sm:-ml-10 sm:pr-4">
+                    <CloseButton onClick={onClose} />
+                </div>
+
                 <span className="text-center ">
                     <Logo />
                 </span>
@@ -56,7 +62,7 @@ const Sidebar = ({ open, onClose }) => {
             </aside>
             <div
                 onClick={onClose}
-                className="fixed top-0 left-0 right-0 z-40 w-full h-full overflow-x-hidden overflow-y-auto md:inset-0 h-modal backdrop-blur-md"
+                className="fixed top-0 bg-gray-400/50 left-0 right-0 z-40 w-full h-full overflow-x-hidden overflow-y-auto md:inset-0 h-modal backdrop-blur"
                 style={{
                     display: open ? 'flex' : 'none',
                 }}

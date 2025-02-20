@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useSearchParams } from 'react-router';
+import { useSearchParams, useNavigate, Outlet } from 'react-router';
 
 // hooks
 import useAxios from 'hooks/useAxios';
@@ -17,6 +17,7 @@ import { SearchBar } from 'UI/SearchBar';
 // It renders the search bar, layout buttons, and the list of products.
 // It also handles the search, view change, and fetching products.
 const HomePage = () => {
+    const navigate = useNavigate();
     const [search, setSearch] = useState('');
     const [view, setView] = useState('grid');
     const debounced = useDebounce((value) => setSearch(value));
@@ -30,6 +31,10 @@ const HomePage = () => {
     };
 
     const handleViewChange = (value) => setView(value);
+
+    const handleProductClick = (id) => {
+        navigate(`/product/${id}`);
+    };
 
     const filteredData = useMemo(() => {
         return data.filter((item) =>
@@ -66,8 +71,13 @@ const HomePage = () => {
                         : 'sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
                 } grid grid-cols-1 px-4 gap-8 xl:w-2/3 mx-auto`}
             >
-                <Products products={filteredData} view={view} />
+                <Products
+                    products={filteredData}
+                    onSelect={handleProductClick}
+                    view={view}
+                />
             </div>
+            <Outlet />
         </Loader>
     );
 };
