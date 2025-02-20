@@ -9,7 +9,7 @@ const ProductCard = ({ product, view, onSelect }) => (
         onClick={onSelect}
         className={`${
             view === 'list' ? 'flex-row' : 'flex-col'
-        } relative cursor-pointer flex group shadow border-b border-gray-200 rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105`}
+        } relative cursor-pointer flex group shadow border border-gray-200 bg-white rounded-xl transition-all duration-300 hover:shadow-lg hover:scale-105`}
     >
         <img
             className={`${
