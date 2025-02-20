@@ -20,6 +20,7 @@ const aliases = [
 
 // https://vite.dev/config/
 export default defineConfig({
+    base: '',
     plugins: [react(), tailwindcss()],
     resolve: {
         alias: aliases.reduce(
